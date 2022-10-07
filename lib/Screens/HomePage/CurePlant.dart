@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:agriteck/utils/AppColors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:flutter_tflite/flutter_tflite.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -225,7 +226,8 @@ class CureYourPlant extends StatelessWidget {
     var imageFile = await _picker.pickImage(source: source);
     if (imageFile != null) {
       predictDesease(imageFile).then((predictions) async {
-        print("predictions:========================================== $predictions");
+        print(
+            "predictions:========================================== $predictions");
         Navigator.of(context).pop();
         await Navigator.push(context, MaterialPageRoute(builder: (context) {
           return DiseaseDetection(
@@ -233,6 +235,10 @@ class CureYourPlant extends StatelessWidget {
             predictions: predictions,
           );
         }));
+      }).onError((error, stackTrace) {
+        SmartDialog.show(builder: (context) {
+          return Container();
+        });
       });
     } else {
       //showToast(content: 'No Image Selected');
@@ -243,22 +249,21 @@ class CureYourPlant extends StatelessWidget {
     var image = imageFile.path;
     String? res = await Tflite.loadModel(
         model: "assets/files/model.tflite",
-        labels: "assets/files/labels.txt",
+        labels: "assets/files/lebels.txt",
         numThreads: 1, // defaults to 1
         isAsset:
             true, // defaults to true, set to false to load resources outside assets
         useGpuDelegate:
             false // defaults to false, set to true to use GPU delegate
         );
-    await Tflite.close();
+
     var recognitions = await Tflite.runModelOnImage(
-        path: image, // required
-        imageMean: 0.0, // defaults to 117.0
-        imageStd: 255.0, // defaults to 1.0
-        numResults: 2, // defaults to 5
-        threshold: 0.2, // defaults to 0.1
-        asynch: true // defaults to true
-        );
+      path: image,
+      numResults: 5,
+      imageMean: 224.0,
+      imageStd: 224.0,
+    );
+    await Tflite.close();
     return recognitions!;
   }
 }
