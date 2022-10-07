@@ -251,14 +251,15 @@ class CureYourPlant extends StatelessWidget {
         model: "assets/files/model.tflite",
         labels: "assets/files/lebels.txt",      
         );
+        print("res======================== $res");
 
-    var recognitions = await Tflite.runModelOnImage(
-      path: image,
-      numResults: 5,
-      imageMean: 224.0,
-      imageStd: 224.0,
-    );
+    // var recognitions = await Tflite.runModelOnImage(
+    //   path: image,
+    //   numResults: 5,
+    //   imageMean: 224.0,
+    //   imageStd: 224.0,
+    // );
     await Tflite.close();
-    return recognitions!;
+    return [];
   }
 }
