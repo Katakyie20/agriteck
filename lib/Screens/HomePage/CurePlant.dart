@@ -249,12 +249,7 @@ class CureYourPlant extends StatelessWidget {
     var image = imageFile.path;
     String? res = await Tflite.loadModel(
         model: "assets/files/model.tflite",
-        labels: "assets/files/lebels.txt",
-        numThreads: 1, // defaults to 1
-        isAsset:
-            true, // defaults to true, set to false to load resources outside assets
-        useGpuDelegate:
-            false // defaults to false, set to true to use GPU delegate
+        labels: "assets/files/lebels.txt",      
         );
 
     var recognitions = await Tflite.runModelOnImage(
