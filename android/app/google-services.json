@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "660792156337",
+    "project_id": "agriteck-18d5c",
+    "storage_bucket": "agriteck-18d5c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660792156337:android:ef6eb5dd38b097432e4290",
+        "android_client_info": {
+          "package_name": "com.fihankrah.agriteck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660792156337-t1p58serafi4gck3bpld5t483jak47j2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4r8ATjb81RkUCt-M3eUPq0YpjSA718pQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660792156337-t1p58serafi4gck3bpld5t483jak47j2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

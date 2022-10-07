@@ -1,0 +1,59 @@
+name: agriteck
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.5
+  carousel_slider: ^4.1.1
+  font_awesome_flutter: ^10.2.1
+  image_picker: ^0.8.6
+  flutter_tflite: ^1.0.1
+  firebase_core: ^1.24.0
+  firebase_auth: ^3.11.2
+  pinput: ^2.2.14
+  shared_preferences: ^2.0.15
+  firebase_storage: ^10.3.11
+  cloud_firestore: ^3.5.1
+  google_fonts: ^3.0.1
+  cached_network_image: ^3.2.2
+  flutter_native_splash: ^2.2.10+1
+  persistent_bottom_nav_bar_v2: ^4.2.5
+  intl_phone_field: ^3.1.0
+  flutter_smart_dialog: ^4.5.5+6
+  after_layout: ^1.1.1
+  geolocator: ^9.0.1
+  geocoding: ^2.0.5
+  dio: ^4.0.0
+  modal_bottom_sheet: ^2.1.2
+  timeago: ^3.3.0
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.1
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: "assets/images/back.png"
+  android: true
+  ios: true
+#flutter pub run flutter_native_splash:create
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/files/
